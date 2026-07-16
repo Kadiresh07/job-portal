@@ -29,8 +29,8 @@ app.use(
       }
 
       // Allow Vercel preview/deployment URLs for this project
-      // Matches https://my-job-portal.vercel.app and https://my-job-portal-*.vercel.app
-      const vercelRegex = /^https:\/\/my-job-portal(?:-[a-zA-Z0-9-]+)?\.vercel\.app$/;
+      // Matches https://job-portal.vercel.app, https://my-job-portal.vercel.app, and their subdomains/previews
+      const vercelRegex = /^https:\/\/(?:my-)?job-portal(?:-[a-zA-Z0-9-]+)?\.vercel\.app$/;
       if (vercelRegex.test(origin)) {
         return callback(null, true);
       }
