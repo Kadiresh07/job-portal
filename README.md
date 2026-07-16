@@ -1,5 +1,18 @@
 # AI Ready Job Portal
 
+
+## Demo Accounts
+
+Use the following demo accounts to explore different roles in the application.
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@example.com | Admin@123 |
+| Employer | employer@example.com | Employer@123 |
+| Candidate | candidate@example.com | Candidate@123 |
+
+> Note: These are demo application accounts 
+
 ## Features
 
 - Authentication
