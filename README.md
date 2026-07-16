@@ -1,79 +1,93 @@
-# AI Job Portal with Job Aggregation
-
-An advanced Job Portal platform that integrates AI-powered job aggregation, enabling seamless connections between employers and candidates.
+# AI Ready Job Portal
 
 ## Features
-- **JWT Authentication**: Secure user authentication using JSON Web Tokens.
-- **Role-Based Access**: Dedicated workflows and dashboards for Admin, Employer, and Candidate roles.
-- **Company Management**: Employers can manage their company profiles, while admins have oversight.
-- **Job Management**: Complete CRUD operations for job postings.
-- **Applications**: Candidates can easily apply to jobs, and employers can review applications.
-- **Saved Jobs**: Candidates can save job listings for future reference.
-- **Job Scraping**: Automated job aggregation to populate the platform with external opportunities.
-- **Admin Dashboard**: Comprehensive dashboard for platform management and statistics.
-- **Resume Upload**: Candidates can upload and manage their resumes.
-- **Swagger API**: Full API documentation available via Swagger UI.
-- **Rate Limiting**: API rate limiting to ensure platform stability and security.
+
+- Authentication
+- JWT Authorization
+- Role Based Access
+- Company Management
+- Job Management
+- Job Application
+- Employer Dashboard
+- Candidate Dashboard
+- Admin Dashboard
+- Resume Upload
 
 ## Tech Stack
 
-### Frontend
+Frontend
+
 - Next.js
 - React
 - Tailwind CSS
 
-### Backend
+Backend
+
 - Node.js
 - Express.js
 
-### Database
+Database
+
 - MongoDB Atlas
 
-## Installation & Setup
+Deployment
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- MongoDB Atlas account (or local MongoDB instance)
+- Vercel
+- Render
 
-### 1. Clone the Repository
+## Installation
+
+### Clone
+
 ```bash
-git clone <your-repository-url>
-cd "Job Porta"
+git clone https://github.com/Kadiresh07/job-portal.git
 ```
 
-### 2. Backend Setup
+### Client
+
 ```bash
-# Navigate to the backend directory
-cd server (or backend folder, check your directory structure)
-
-# Install dependencies
-npm install
-
-# Create a .env file and configure the environment variables
-# Example variables: PORT, MONGO_URI, JWT_SECRET, etc.
-cp .env.example .env
-
-# Start the backend server
-npm start
-# or for development: npm run dev
-```
-
-### 3. Frontend Setup
-```bash
-# Open a new terminal and navigate to the frontend directory
 cd client
-
-# Install dependencies
 npm install
-
-# Create a .env.local file if needed for frontend environment variables
-# e.g., NEXT_PUBLIC_API_URL=http://localhost:5000/api
-
-# Start the frontend development server
 npm run dev
 ```
 
-### 4. Access the Application
-- **Frontend**: Open your browser and navigate to `http://localhost:3000`
-- **Backend API Docs**: Swagger UI is typically available at `http://localhost:<backend-port>/api-docs` (Check backend setup for specific route).
+### Server
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+## Environment Variables
+
+Server
+
+```
+<!-- PORT=5000
+
+MONGODB_URI=mongodb+srv://kadiresh06_db_user:YAQMrjnb4YjApK1j@cluster0.evcphn1.mongodb.net/?appName=Cluster0
+
+JWT_SECRET=d4f1c8c7d2e2e1f2b8e91a8e0f6d3b9d9b6f2e4b7c8a9d0e1f2a3b4c5d6e7f8899aabbccddeeff00112233445566778899
+
+CLIENT_URL=https://my-job-portal-mu.vercel.app
+# ↑ Local dev: keep as localhost
+# On Render (production): set CLIENT_URL to your Vercel frontend URL, e.g.:
+# CLIENT_URL=https://job-portal.vercel.app
+
+NEXT_PUBLIC_API_URL=https://job-portal-si1a.onrender.com -->
+```
+
+Client
+
+``
+
+## Live Demo
+
+Frontend
+
+https://my-job-portal-mu.vercel.app
+
+Backend
+
+https://job-portal-si1a.onrender.com
