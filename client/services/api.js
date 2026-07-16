@@ -1,4 +1,4 @@
-const BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 async function request(path, options = {}) {
   const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
