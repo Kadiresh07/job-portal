@@ -19,11 +19,24 @@ app.use(
   cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (e.g. mobile apps, curl, Postman)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error(`CORS policy: origin ${origin} not allowed`));
+      if (!origin) {
+        return callback(null, true);
       }
+      
+      // Check if origin is in the allowed list
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // Allow Vercel preview/deployment URLs for this project
+      // Matches https://my-job-portal.vercel.app and https://my-job-portal-*.vercel.app
+      const vercelRegex = /^https:\/\/my-job-portal(?:-[a-zA-Z0-9-]+)?\.vercel\.app$/;
+      if (vercelRegex.test(origin)) {
+        return callback(null, true);
+      }
+
+      // If the origin is not allowed, reject it cleanly without throwing an Express error
+      callback(null, false);
     },
     credentials: true,
   })

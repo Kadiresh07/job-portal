@@ -1,4 +1,15 @@
-const BASE = process.env.NEXT_PUBLIC_API_URL;
+const getApiBaseUrl = () => {
+  let base = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+  // Remove any trailing slash first
+  base = base.replace(/\/$/, "");
+  // If base does not end with /api, append it
+  if (!base.endsWith("/api")) {
+    base = base + "/api";
+  }
+  return base;
+};
+
+const BASE = getApiBaseUrl();
 
 async function request(path, options = {}) {
   const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
